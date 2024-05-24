@@ -5,16 +5,14 @@ import swal from "sweetalert";
 import { moviesRef } from "./Firebase/firebase";
 import { toast } from "react-toastify";
 
-
 const AddMovie = () => {
-
   const [form, setForm] = useState({
     title: "",
     year: "",
     description: "",
     image: "",
-    rated : 0,
-    rating : 0
+    rated: 0,
+    rating: 0,
   });
 
   const [loading, setLoading] = useState(false);
@@ -27,20 +25,20 @@ const AddMovie = () => {
         title: "Successfully Added",
         icon: "success",
         buttons: false,
-        timer: 3000
-      })
+        timer: 3000,
+      });
       setForm({
         title: "",
         year: "",
         description: "",
-        image: ""
+        image: "",
       }); // Reset form after successful addition
     } catch (err) {
       swal({
         title: err.message || "An error occurred",
         icon: "error",
         buttons: false,
-        timer: 3000
+        timer: 3000,
       });
     }
     setLoading(false);
@@ -59,9 +57,7 @@ const AddMovie = () => {
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">
-                  <label className="leading-7 text-sm text-white">
-                    Title
-                  </label>
+                  <label className="leading-7 text-sm text-white">Title</label>
                   <input
                     type="text"
                     id="title"
@@ -76,17 +72,13 @@ const AddMovie = () => {
               </div>
               <div className="p-2 w-1/2">
                 <div className="relative">
-                  <label className="leading-7 text-sm text-white">
-                    Year
-                  </label>
+                  <label className="leading-7 text-sm text-white">Year</label>
                   <input
                     type="text"
                     id="year"
                     name="year"
                     value={form.year}
-                    onChange={(e) =>
-                      setForm({ ...form, year: e.target.value })
-                    }
+                    onChange={(e) => setForm({ ...form, year: e.target.value })}
                     className="w-full bg-white rounded border-2 border-blue-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-600 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
@@ -129,11 +121,7 @@ const AddMovie = () => {
                   onClick={addMovie}
                   className="flex mx-auto text-white bg-green-400 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"
                 >
-                  {loading ? (
-                    <TailSpin height={25} color="white" />
-                  ) : (
-                    "Submit"
-                  )}
+                  {loading ? <TailSpin height={25} color="white" /> : "Submit"}
                 </button>
               </div>
             </div>
