@@ -13,12 +13,12 @@ const Header = () => {
     <div className="h-14 sticky top-0 z-10 bg-[#15161a] w-full text-white border-b-2 border-white text-2xl font-bold px-10 flex justify-between items-center " >
       
       <Link to={'/'}>
-        <span>Filmy <span className="text-red-700 cursor-pointer  ">Verse</span></span>
+        <span>Screen <span className="text-red-700 cursor-pointer  ">Savvy</span></span>
       </Link>
      
-      { Appstate.login ? 
+      { useAppstate.login ? 
         <Link to={'/addMovie'}>
-        <h2 className='cursor-pointer text-red-600'> <AddIcon className='text-white text-lg'/> Add New </h2>
+        <h2 className='cursor-pointer text-xl text-red-600'> <AddIcon className='text-white text-lg'/> Add Movie </h2>
         </Link>
         :
         <Link to={'/login'}>

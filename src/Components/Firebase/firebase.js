@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore, collection } from "firebase/firestore";
 
 
@@ -7,7 +8,7 @@ import { getFirestore, collection } from "firebase/firestore";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+const firebaseConfig = {                        
   apiKey: "AIzaSyDxeAcNHTgGTTCB9XauClKrpi0SYQv4Z5c",
   authDomain: "screensavvy-8355d.firebaseapp.com",
   projectId: "screensavvy-8355d",
@@ -22,5 +23,7 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const moviesRef = collection(db, 'movies');
 export const reviewsRef = collection(db, 'reviews');
- 
+export const usersRef = collection(db, 'users');
+export const auth = getAuth();
+
 export default app;

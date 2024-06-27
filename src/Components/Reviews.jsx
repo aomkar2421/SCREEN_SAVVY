@@ -7,9 +7,13 @@ import { TailSpin } from 'react-loader-spinner'
 import swal from 'sweetalert'
 import { useEffect } from 'react'
 import { ThreeDots } from 'react-loader-spinner'
+import { Appstate } from '../App'
+import { useContext } from 'react'
 
 
 const Reviews = ({id, prevRating, userRated}) => {
+
+    const useAppState = useContext(Appstate);
 
     const [rating, setRating] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -22,7 +26,7 @@ const Reviews = ({id, prevRating, userRated}) => {
         try {
             await addDoc(reviewsRef, {
                 movieid: id,
-                name: 'Omkar Jagtap',
+                name: useAppState.userName,
                 rating: rating,
                 thought: form,
                 timestamp: new Date().getTime()

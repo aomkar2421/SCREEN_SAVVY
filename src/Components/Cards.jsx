@@ -40,10 +40,10 @@ const Cards = () => {
         data.map((movie, index) => (
           <div
             key={movie.id}
-            className="text-white text-bold h-96 shadow-lg m-2 p-2 hover:scale-[1.03] ease-in-out transition-all duration-300 font-mono bg-gray-800 rounded-md"
+            className="text-white text-bold h-96 w-52 shadow-lg m-2 p-2 hover:scale-[1.03] ease-in-out transition-all duration-300 font-mono bg-gray-800 rounded-md"
           >
             <Link to={`/detail/${movie.id}`}>
-              <img className="h-72 w-52 rounded-md" src={movie.image} alt={movie.title} />
+              <img className="h-64 w-52 rounded-md" src={movie.image} alt={movie.title} />
               <h1>
                 <span className="text-gray-500">Name :</span> {movie.title}
               </h1>
