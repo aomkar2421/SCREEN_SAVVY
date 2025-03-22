@@ -52,6 +52,9 @@ const Login = () => {
         case "auth/user-not-found":
           errorMessage = "No user found with this email.";
           break;
+        case "auth/invalid-credential":
+          errorMessage = "Incorrect password. Please try again";
+          break;  
         case "auth/wrong-password":
           errorMessage = "Incorrect password. Please try again.";
           break;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import ReactStars from 'react-stars'
@@ -6,9 +6,13 @@ import { db } from './Firebase/firebase';
 import { getDoc, doc } from 'firebase/firestore';
 import Reviews from './Reviews';
 import { ThreeCircles } from 'react-loader-spinner';
+import { Appstate } from '../App';
 
 
 const Detail = () => {
+
+    const useAppstate = useContext(Appstate)
+    
 
     const [data, setData] = useState({
         name : '',
